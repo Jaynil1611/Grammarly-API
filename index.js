@@ -1,7 +1,6 @@
-const { Grammarly } = require("@stewartmcgown/grammarly-api");
-
-const express = require("express");
-const cors = require("cors");
+import { Grammarly } from "@stewartmcgown/grammarly-api";
+import express from "express";
+import cors from "cors";
 
 const app = express();
 
