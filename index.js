@@ -42,10 +42,13 @@ const cleanOutput = (inputQuery) => {
   const newLineRegEx = /\r?\n|\r/;
   const htmlRegEx = /(<([^>]+)>)/gi;
   const removeSpace = /\u00a0/g;
+  const removeWhiteSpace = /\s+/g;
   return inputQuery
-    .replace(newLineRegEx, "")
-    .replace(htmlRegEx, "")
-    .replace(removeSpace, "");
+    .replace(newLineRegEx, " ")
+    .replace(htmlRegEx, " ")
+    .replace(removeSpace, " ")
+    .replace(removeWhiteSpace, " ")
+    .trim();
 };
 
 app.get("/check", async function (req, res) {
