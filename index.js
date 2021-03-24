@@ -19,14 +19,14 @@ const getRequiredDetailsFromGrammarly = (response) => {
       cardLayout: { group },
     } = alert;
     return {
-      title: cleanOutput(title),
-      minicardTitle: cleanOutput(minicardTitle),
-      result: cleanOutput(result),
-      details: cleanOutput(details),
-      explanation: cleanOutput(explanation),
-      todo: cleanOutput(todo),
-      text: cleanOutput(text),
-      group: cleanOutput(group),
+      title,
+      minicardTitle,
+      result,
+      details,
+      explanation,
+      todo,
+      text,
+      group,
     };
   });
   const { score } = response.result;
@@ -38,21 +38,14 @@ const getRequiredDetailsFromGrammarly = (response) => {
   };
 };
 
-const cleanOutput = (inputQuery) => {
-  const newLineRegEx = /\r?\n|\r/;
-  const htmlRegEx = /(<([^>]+)>)/gi;
-  return inputQuery.replace(newLineRegEx, "").replace(htmlRegEx, "").toString();
-};
-
 app.get("/check", async function (req, res) {
   try {
     const grammarly = new Grammarly();
     const query = req.query.search;
     if (query.length > 0) {
-      const parsedQuery = cleanOutput(query);
-      const results = await grammarly.analyse(parsedQuery).then(correct);
+      const results = await grammarly.analyse(query.trim()).then(correct);
       const finalResults = getRequiredDetailsFromGrammarly(results);
-      res.status(200).send(finalResults);
+      res.status(200).send(JSON.stringify(finalResults));
     } else {
       res.status(200).send([]);
     }
