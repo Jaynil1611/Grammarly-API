@@ -1,4 +1,4 @@
-import { Grammarly } from "@stewartmcgown/grammarly-api";
+import { correct, Grammarly } from "@stewartmcgown/grammarly-api";
 import express from "express";
 import cors from "cors";
 
@@ -6,23 +6,8 @@ const app = express();
 
 app.use(cors());
 
-// const text = `When we have shuffled off this mortal coil,
-// Must give us pause - their's the respect
-// That makes calamity of so long life.`;
-
-// const free = new Grammarly();
-
-// (async () => {
-//     const results = await free.analyse(text)
-//     console.log(results);
-// })();
-
 const getRequiredDetailsFromGrammarly = (response) => {
-  const finalResults = {
-    alerts: [],
-    result: {},
-  };
-  response.alerts.map((alert) => {
+  const alerts = response.alerts.map((alert) => {
     const {
       title,
       minicardTitle,
@@ -33,7 +18,7 @@ const getRequiredDetailsFromGrammarly = (response) => {
       text,
       cardLayout: { group },
     } = alert;
-    finalResults.alerts.push({
+    return {
       title: cleanOutput(title),
       minicardTitle: cleanOutput(minicardTitle),
       result: cleanOutput(result),
@@ -42,11 +27,15 @@ const getRequiredDetailsFromGrammarly = (response) => {
       todo: cleanOutput(todo),
       text: cleanOutput(text),
       group: cleanOutput(group),
-    });
+    };
   });
   const { score } = response.result;
-  finalResults.result.score = score;
-  return finalResults;
+  const { corrected } = response;
+  return {
+    alerts,
+    score,
+    corrected,
+  };
 };
 
 const cleanOutput = (inputQuery) => {
@@ -61,7 +50,7 @@ app.get("/check", async function (req, res) {
     const query = req.query.search;
     if (query.length > 0) {
       const parsedQuery = cleanOutput(query);
-      const results = await grammarly.analyse(parsedQuery);
+      const results = await grammarly.analyse(parsedQuery).then(correct);
       const finalResults = getRequiredDetailsFromGrammarly(results);
       res.status(200).send(finalResults);
     } else {

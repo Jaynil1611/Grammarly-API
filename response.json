@@ -2,68 +2,47 @@
   "alerts": [
     {
       "point": "Tautology",
-      "transforms": [
-        "&lt;span class='gr_grammar_del'&gt;possibly&lt;/span&gt;"
-      ],
+      "transforms": ["<span class='gr_grammar_del'>possibly</span>"],
       "title": "Redundant phrasing",
       "minicardTitle": "Remove redundancy",
       "result": "Avoids redundancy:",
-      "details": "&lt;p&gt;Redundant phrases such as&nbsp;&lt;i&gt;final outcome, red in&nbsp;color,&lt;/i&gt; and &lt;i&gt;I&nbsp;personally&lt;/i&gt; express the same information twice. Avoiding this kind of&nbsp;redundancy will make your sentences sound tighter and more professional.\n",
-      "explanation": "&lt;p&gt;&lt;b&gt;Can possibly&lt;/b&gt; may be&nbsp;redundant.\n",
-      "examples": "&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: I’ve been attending this school for &lt;b&gt;the period of&lt;/b&gt;&nbsp;several weeks.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: I’ve been attending this school for several weeks.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Her dress was grey &lt;b&gt;in&nbsp;color&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Her dress was grey.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: This delicious donut is&nbsp;the best &lt;b&gt;$5&nbsp;dollars&lt;/b&gt; I’ve ever spent.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: This delicious donut is&nbsp;the best &lt;b&gt;5&nbsp;dollars&lt;/b&gt; I’ve ever spent.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: This delicious donut is&nbsp;the best &lt;b&gt;$5&lt;/b&gt;&nbsp;I’ve ever spent.&lt;/span&gt;&lt;br/&gt;",
+      "details": "<p>Redundant phrases such as <i>final outcome, red in color,</i> and <i>I personally</i> express the same information twice. Avoiding this kind of redundancy will make your sentences sound tighter and more professional.\n",
+      "explanation": "<p><b>Can possibly</b> may be redundant.\n",
+      "examples": "<p><span class=\"red\">Wordy: I’ve been attending this school for <b>the period of</b> several weeks.</span><br/><span class=\"green\">Concise: I’ve been attending this school for several weeks.</span><br/><p><span class=\"red\">Wordy: Her dress was grey <b>in color</b>.</span><br/><span class=\"green\">Concise: Her dress was grey.</span><br/><p><span class=\"red\">Wordy: This delicious donut is the best <b>$5 dollars</b> I’ve ever spent.</span><br/><span class=\"green\">Concise: This delicious donut is the best <b>5 dollars</b> I’ve ever spent.</span><br/><span class=\"green\">Concise: This delicious donut is the best <b>$5</b> I’ve ever spent.</span><br/>",
       "todo": "remove redundancy",
       "sentence_no": 0,
       "free": true,
       "category": "Wordiness",
       "pid": 755040,
       "rid": 755040,
-      "sid": 727416,
-      "begin": 33,
-      "end": 42,
+      "sid": 116565,
+      "begin": 22,
+      "end": 31,
       "text": "possibly ",
       "group": "Style",
       "pname": "Style/Wordiness/Tautology/General",
       "phash": "96C8BC45110058A6C6A6FA692C9CCA4D",
-      "pversion": "1.0.12094",
+      "pversion": "1.0.12121",
       "rev": 0,
-      "highlightBegin": 33,
-      "highlightEnd": 41,
+      "highlightBegin": 22,
+      "highlightEnd": 30,
       "highlightText": "possibly",
       "replacements": [""],
       "transformJson": {
-        "context": {
-          "s": 24,
-          "e": 50
-        },
-        "highlights": [
-          {
-            "s": 9,
-            "e": 17
-          }
-        ],
+        "context": { "e": 39, "s": 13 },
+        "highlights": [{ "s": 9, "e": 17 }],
         "alternatives": [
           {
             "ops": [
-              {
-                "retain": 9
-              },
-              {
-                "delete": 8,
-                "attributes": {
-                  "type": "main"
-                }
-              },
-              {
-                "delete": 1
-              }
+              { "retain": 9 },
+              { "delete": 8, "attributes": { "type": "main" } },
+              { "delete": 1 }
             ]
           }
         ]
       },
       "impact": "advanced",
-      "extra_properties": {
-        "priority": "2"
-      },
+      "extra_properties": { "priority": "2" },
       "cardLayout": {
         "category": "General",
         "group": "Conciseness",
@@ -85,70 +64,51 @@
     {
       "point": "InAWayManner",
       "transforms": [
-        "&lt;span class='gr_grammar_del'&gt;revise a wordy sentence in an effortless manner&lt;/span&gt;→&lt;span class='gr_grammar_ins'&gt;effortlessly revise a wordy sentence&lt;/span&gt;"
+        "<span class='gr_grammar_del'>revise a wordy sentence in an effortless manner</span>→<span class='gr_grammar_ins'>effortlessly revise a wordy sentence</span>"
       ],
-      "title": "Wordy adverbial of&nbsp;manner",
+      "title": "Wordy adverbial of manner",
       "minicardTitle": "Change the wording",
       "result": "Less wordy:",
-      "details": "&lt;p&gt;Often, phrases that describe how someone is&nbsp;performing an&nbsp;action, such as&nbsp;&lt;i&gt;in&nbsp;a&nbsp;clear way&lt;/i&gt; or&nbsp;&lt;i&gt;in&nbsp;a&nbsp;calm manner,&lt;/i&gt; make sentences wordy. You can cut out excess words by&nbsp;replacing these phrases with adverbs, such as&nbsp;&lt;i&gt;clearly&lt;/i&gt; or&nbsp;&lt;i&gt;calmly.&lt;/i&gt;\n",
-      "explanation": "&lt;p&gt;The phrase &lt;b&gt;in an effortless manner&lt;/b&gt; may be&nbsp;considered wordy. Consider changing the wording.\n",
-      "examples": "&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Everything seems to&nbsp;be&nbsp;working &lt;b&gt;in&nbsp;a&nbsp;proper manner&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Everything seems to&nbsp;be&nbsp;working &lt;b&gt;properly&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: George did not dress &lt;b&gt;in&nbsp;an&nbsp;appropriate way&lt;/b&gt; for the formal event.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: George did not dress &lt;b&gt;appropriately&lt;/b&gt; for the formal event.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Please speak &lt;b&gt;in&nbsp;a&nbsp;quiet way&lt;/b&gt; while you’re in&nbsp;the library.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Please speak &lt;b&gt;quietly&lt;/b&gt; while you’re in&nbsp;the library.&lt;/span&gt;&lt;br/&gt;",
+      "details": "<p>Often, phrases that describe how someone is performing an action, such as <i>in a clear way</i> or <i>in a calm manner,</i> make sentences wordy. You can cut out excess words by replacing these phrases with adverbs, such as <i>clearly</i> or <i>calmly.</i>\n",
+      "explanation": "<p>The phrase <b>in an effortless manner</b> may be considered wordy. Consider changing the wording.\n",
+      "examples": "<p><span class=\"red\">Wordy: Everything seems to be working <b>in a proper manner</b>.</span><br/><span class=\"green\">Concise: Everything seems to be working <b>properly</b>.</span><br/><p><span class=\"red\">Wordy: George did not dress <b>in an appropriate way</b> for the formal event.</span><br/><span class=\"green\">Concise: George did not dress <b>appropriately</b> for the formal event.</span><br/><p><span class=\"red\">Wordy: Please speak <b>in a quiet way</b> while you’re in the library.</span><br/><span class=\"green\">Concise: Please speak <b>quietly</b> while you’re in the library.</span><br/>",
       "todo": "change the wording",
       "sentence_no": 0,
       "free": true,
       "category": "Wordiness",
       "pid": 844178,
       "rid": 844178,
-      "sid": 727416,
-      "begin": 51,
-      "end": 98,
+      "sid": 116565,
+      "begin": 40,
+      "end": 87,
       "text": "revise a wordy sentence in an effortless manner",
       "group": "Style",
       "pname": "Style/Wordiness/InAWayManner/InAWayMannerDobj",
       "phash": "2B24A155517BF088AC065A96B1600FEE",
-      "pversion": "1.0.12094",
+      "pversion": "1.0.12121",
       "rev": 0,
-      "highlightBegin": 51,
-      "highlightEnd": 98,
+      "highlightBegin": 40,
+      "highlightEnd": 87,
       "highlightText": "revise a wordy sentence in an effortless manner",
       "replacements": ["effortlessly revise a wordy sentence"],
       "transformJson": {
-        "context": {
-          "s": 42,
-          "e": 99
-        },
-        "highlights": [
-          {
-            "s": 9,
-            "e": 56
-          }
-        ],
+        "context": { "e": 88, "s": 31 },
+        "highlights": [{ "s": 9, "e": 56 }],
         "alternatives": [
           {
             "ops": [
-              {
-                "retain": 9
-              },
-              {
-                "delete": 47,
-                "attributes": {
-                  "type": "main"
-                }
-              },
+              { "retain": 9 },
+              { "delete": 47, "attributes": { "type": "main" } },
               {
                 "insert": "effortlessly revise a wordy sentence",
-                "attributes": {
-                  "type": "main"
-                }
+                "attributes": { "type": "main" }
               }
             ]
           }
         ]
       },
       "impact": "advanced",
-      "extra_properties": {
-        "priority": "2"
-      },
+      "extra_properties": { "priority": "2" },
       "cardLayout": {
         "category": "General",
         "group": "Conciseness",
@@ -178,5 +138,6 @@
     "foreign": false,
     "action": "finished"
   },
-  "original": "You'll find suggestions that can possibly help you revise a wordy sentence in an effortless manner."
+  "original": "You'll find suggestions that can possibly help you revise a wordy sentence in an effortless manner.",
+  "corrected": "You'll find suggestions that can possibly help you effortlessly revise a wordy sentence."
 }

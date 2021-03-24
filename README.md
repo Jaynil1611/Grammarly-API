@@ -10,7 +10,7 @@ Live demo: [Grammarly API](https://grammarly-backend.herokuapp.com/)
 
 - Query the `/check` endpoint with `?search` query parameter as following:
 
-- `https://grammarly-backend.herokuapp.com/check?search="You'll find suggestions that can possibly help you revise a wordy sentence in an effortless manner."`
+- `https://grammarly-backend.herokuapp.com/check?search=You'll find suggestions that can possibly help you revise a wordy sentence in an effortless manner.`
 
 ### Instructions
 
