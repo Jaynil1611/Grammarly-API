@@ -43,9 +43,9 @@ const cleanOutput = (inputQuery) => {
   const htmlRegEx = /(<([^>]+)>)/gi;
   const removeSpace = /\u00a0/g;
   return inputQuery
-    .replace(newLineRegEx, null)
-    .replace(htmlRegEx, null)
-    .replace(removeSpace, null);
+    .replace(newLineRegEx, "")
+    .replace(htmlRegEx, "")
+    .replace(removeSpace, "");
 };
 
 app.get("/check", async function (req, res) {
