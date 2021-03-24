@@ -1,0 +1,186 @@
+{
+    "alerts": [
+        {
+            "point": "Tautology",
+            "transforms": [
+                "&lt;span class='gr_grammar_del'&gt;possibly&lt;/span&gt;"
+            ],
+            "title": "Redundant phrasing",
+            "minicardTitle": "Remove redundancy",
+            "result": "Avoids redundancy:",
+            "details": "&lt;p&gt;Redundant phrases such as&nbsp;&lt;i&gt;final outcome, red in&nbsp;color,&lt;/i&gt; and &lt;i&gt;I&nbsp;personally&lt;/i&gt; express the same information twice. Avoiding this kind of&nbsp;redundancy will make your sentences sound tighter and more professional.\n",
+            "explanation": "&lt;p&gt;&lt;b&gt;Can possibly&lt;/b&gt; may be&nbsp;redundant.\n",
+            "examples": "&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: I’ve been attending this school for &lt;b&gt;the period of&lt;/b&gt;&nbsp;several weeks.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: I’ve been attending this school for several weeks.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Her dress was grey &lt;b&gt;in&nbsp;color&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Her dress was grey.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: This delicious donut is&nbsp;the best &lt;b&gt;$5&nbsp;dollars&lt;/b&gt; I’ve ever spent.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: This delicious donut is&nbsp;the best &lt;b&gt;5&nbsp;dollars&lt;/b&gt; I’ve ever spent.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: This delicious donut is&nbsp;the best &lt;b&gt;$5&lt;/b&gt;&nbsp;I’ve ever spent.&lt;/span&gt;&lt;br/&gt;",
+            "todo": "remove redundancy",
+            "sentence_no": 0,
+            "free": true,
+            "category": "Wordiness",
+            "pid": 755040,
+            "rid": 755040,
+            "sid": 727416,
+            "begin": 33,
+            "end": 42,
+            "text": "possibly ",
+            "group": "Style",
+            "pname": "Style/Wordiness/Tautology/General",
+            "phash": "96C8BC45110058A6C6A6FA692C9CCA4D",
+            "pversion": "1.0.12094",
+            "rev": 0,
+            "highlightBegin": 33,
+            "highlightEnd": 41,
+            "highlightText": "possibly",
+            "replacements": [
+                ""
+            ],
+            "transformJson": {
+                "context": {
+                    "s": 24,
+                    "e": 50
+                },
+                "highlights": [
+                    {
+                        "s": 9,
+                        "e": 17
+                    }
+                ],
+                "alternatives": [
+                    {
+                        "ops": [
+                            {
+                                "retain": 9
+                            },
+                            {
+                                "delete": 8,
+                                "attributes": {
+                                    "type": "main"
+                                }
+                            },
+                            {
+                                "delete": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "impact": "advanced",
+            "extra_properties": {
+                "priority": "2"
+            },
+            "cardLayout": {
+                "category": "General",
+                "group": "Conciseness",
+                "groupDescription": "Eliminates wordiness and redundancy",
+                "rank": 60,
+                "outcome": "Clarity",
+                "outcomeDescription": "Identifies confusing, hard-to-read and overlong sentences. Eliminates wordiness and redundancy.",
+                "outcomeRank": 20,
+                "bundle": "Reduce wordiness",
+                "bundleRank": 50
+            },
+            "categoryHuman": "Wordy sentences",
+            "cost": 1,
+            "view": "priority",
+            "inline": "not_inline",
+            "action": "alert",
+            "id": 5
+        },
+        {
+            "point": "InAWayManner",
+            "transforms": [
+                "&lt;span class='gr_grammar_del'&gt;revise a wordy sentence in an effortless manner&lt;/span&gt;→&lt;span class='gr_grammar_ins'&gt;effortlessly revise a wordy sentence&lt;/span&gt;"
+            ],
+            "title": "Wordy adverbial of&nbsp;manner",
+            "minicardTitle": "Change the wording",
+            "result": "Less wordy:",
+            "details": "&lt;p&gt;Often, phrases that describe how someone is&nbsp;performing an&nbsp;action, such as&nbsp;&lt;i&gt;in&nbsp;a&nbsp;clear way&lt;/i&gt; or&nbsp;&lt;i&gt;in&nbsp;a&nbsp;calm manner,&lt;/i&gt; make sentences wordy. You can cut out excess words by&nbsp;replacing these phrases with adverbs, such as&nbsp;&lt;i&gt;clearly&lt;/i&gt; or&nbsp;&lt;i&gt;calmly.&lt;/i&gt;\n",
+            "explanation": "&lt;p&gt;The phrase &lt;b&gt;in an effortless manner&lt;/b&gt; may be&nbsp;considered wordy. Consider changing the wording.\n",
+            "examples": "&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Everything seems to&nbsp;be&nbsp;working &lt;b&gt;in&nbsp;a&nbsp;proper manner&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Everything seems to&nbsp;be&nbsp;working &lt;b&gt;properly&lt;/b&gt;.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: George did not dress &lt;b&gt;in&nbsp;an&nbsp;appropriate way&lt;/b&gt; for the formal event.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: George did not dress &lt;b&gt;appropriately&lt;/b&gt; for the formal event.&lt;/span&gt;&lt;br/&gt;&lt;p&gt;&lt;span class=\"red\"&gt;Wordy: Please speak &lt;b&gt;in&nbsp;a&nbsp;quiet way&lt;/b&gt; while you’re in&nbsp;the library.&lt;/span&gt;&lt;br/&gt;&lt;span class=\"green\"&gt;Concise: Please speak &lt;b&gt;quietly&lt;/b&gt; while you’re in&nbsp;the library.&lt;/span&gt;&lt;br/&gt;",
+            "todo": "change the wording",
+            "sentence_no": 0,
+            "free": true,
+            "category": "Wordiness",
+            "pid": 844178,
+            "rid": 844178,
+            "sid": 727416,
+            "begin": 51,
+            "end": 98,
+            "text": "revise a wordy sentence in an effortless manner",
+            "group": "Style",
+            "pname": "Style/Wordiness/InAWayManner/InAWayMannerDobj",
+            "phash": "2B24A155517BF088AC065A96B1600FEE",
+            "pversion": "1.0.12094",
+            "rev": 0,
+            "highlightBegin": 51,
+            "highlightEnd": 98,
+            "highlightText": "revise a wordy sentence in an effortless manner",
+            "replacements": [
+                "effortlessly revise a wordy sentence"
+            ],
+            "transformJson": {
+                "context": {
+                    "s": 42,
+                    "e": 99
+                },
+                "highlights": [
+                    {
+                        "s": 9,
+                        "e": 56
+                    }
+                ],
+                "alternatives": [
+                    {
+                        "ops": [
+                            {
+                                "retain": 9
+                            },
+                            {
+                                "delete": 47,
+                                "attributes": {
+                                    "type": "main"
+                                }
+                            },
+                            {
+                                "insert": "effortlessly revise a wordy sentence",
+                                "attributes": {
+                                    "type": "main"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "impact": "advanced",
+            "extra_properties": {
+                "priority": "2"
+            },
+            "cardLayout": {
+                "category": "General",
+                "group": "Conciseness",
+                "groupDescription": "Eliminates wordiness and redundancy",
+                "rank": 60,
+                "outcome": "Clarity",
+                "outcomeDescription": "Identifies confusing, hard-to-read and overlong sentences. Eliminates wordiness and redundancy.",
+                "outcomeRank": 20,
+                "bundle": "Reduce wordiness",
+                "bundleRank": 50
+            },
+            "categoryHuman": "Wordy sentences",
+            "cost": 1,
+            "view": "priority",
+            "inline": "not_inline",
+            "action": "alert",
+            "id": 4
+        }
+    ],
+    "result": {
+        "sid": 1,
+        "rev": 0,
+        "score": 58,
+        "generalScore": -1,
+        "removed": [],
+        "dialect": "british",
+        "foreign": false,
+        "action": "finished"
+    },
+    "original": "You'll find suggestions that can possibly help you revise a wordy sentence in an effortless manner."
+}
