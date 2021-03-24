@@ -73,10 +73,12 @@ app.get("/check", async function (req, res) {
   }
 });
 
-app.get("/", (req, res) => res.send("Welcome to Jaynil's Grammar Checker!"));
+app.get("/", (req, res) =>
+  res.status(200).send("Welcome to Jaynil's Grammar Checker!")
+);
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, () => {
   console.log(`Grammar Checker Running on ${port}`);
 });
