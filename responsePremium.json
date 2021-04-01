@@ -1,0 +1,78 @@
+{
+  "alerts": [
+    {
+      "point": "WPCMissingComma",
+      "transforms": ["<span class='gr_grammar_ins'>,</span> just"],
+      "title": "Missing comma",
+      "minicardTitle": "Add a comma",
+      "result": "",
+      "details": "<p>A comma symbolizes a slight pause that can separate ideas or grammatical structures in a sentence. There are dozens of ways to use commas. Some common cases include separating parallel adjectives, setting off nonrestrictive phrases, separating items in a list, and separating an introductory phrase from the rest of a sentence.\n",
+      "explanation": "<p>It seems that you are missing a comma. Consider adding a comma.\n",
+      "examples": "<p><span class=\"red\">Incorrect: Prior to the <b>scandal</b> the governor’s approval rating was high.</span><br/><span class=\"green\">Correct: Prior to the <b>scandal,</b> the governor’s approval rating was high.</span><br/><p><span class=\"red\">Incorrect: He was a <b>difficult</b> stubborn child.</span><br/><span class=\"green\">Correct: He was a <b>difficult,</b> stubborn child.</span><br/>",
+      "todo": "add a comma",
+      "sentence_no": 0,
+      "free": false,
+      "category": "CompPunct",
+      "pid": 1193445,
+      "rid": 1193445,
+      "sid": 9139451,
+      "begin": 54,
+      "end": 54,
+      "text": "",
+      "group": "Punctuation",
+      "pname": "Punctuation/CompPunct/WPCMissingComma/WPCMissComma",
+      "phash": "A6B2503BFE443D092810D11B1883E584",
+      "pversion": "1.0.12194",
+      "rev": 0,
+      "highlightBegin": 55,
+      "highlightEnd": 59,
+      "highlightText": "just",
+      "replacements": [","],
+      "transformJson": {
+        "context": { "e": 67, "s": 33 },
+        "highlights": [{ "s": 22, "e": 26 }],
+        "alternatives": [
+          {
+            "ops": [
+              { "retain": 21 },
+              { "insert": ",", "attributes": { "type": "main" } },
+              { "retain": 1 },
+              { "retain": 4, "attributes": { "type": "important" } }
+            ]
+          }
+        ]
+      },
+      "impact": "advanced",
+      "extra_properties": { "priority": "2", "j": "0.6508768143524348" },
+      "cardLayout": {
+        "category": "General",
+        "group": "Punctuation",
+        "groupDescription": "Corrects missing and misused punctuation",
+        "rank": 30,
+        "outcome": "Correctness",
+        "outcomeDescription": "Corrects misspellings, grammatical errors, missing and misused punctuation. Checks for natural phrasing and good word choice.",
+        "outcomeRank": 10,
+        "bundle": "Fix spelling and grammar",
+        "bundleRank": 10
+      },
+      "categoryHuman": "Punctuation in compound/complex sentences",
+      "cost": 1,
+      "view": "priority",
+      "inline": "not_inline",
+      "action": "alert",
+      "id": 4
+    }
+  ],
+  "result": {
+    "sid": 1,
+    "rev": 0,
+    "score": 45,
+    "generalScore": -1,
+    "removed": [],
+    "dialect": "british",
+    "foreign": false,
+    "action": "finished"
+  },
+  "original": "So you can view them along with their transformations just as with free corrections.",
+  "corrected": "So you can view them along with their transformations, just as with free corrections."
+}

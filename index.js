@@ -19,16 +19,17 @@ const getRequiredDetailsFromGrammarly = (response) => {
       cardLayout: { group },
     } = alert;
     return {
-      title: cleanOutput(title),
-      minicardTitle: cleanOutput(minicardTitle),
-      result: cleanOutput(result),
-      details: cleanOutput(details),
-      explanation: cleanOutput(explanation),
-      todo: cleanOutput(todo),
-      text: cleanOutput(text),
-      group: cleanOutput(group),
+      title: title,
+      minicardTitle: minicardTitle,
+      result: result,
+      details: details,
+      explanation: explanation,
+      todo: todo,
+      text: text,
+      group: group,
     };
   });
+
   const { score } = response.result;
   const { corrected } = response;
   return {
@@ -38,26 +39,32 @@ const getRequiredDetailsFromGrammarly = (response) => {
   };
 };
 
-const cleanOutput = (inputQuery) => {
-  const newLineRegEx = /\r?\n|\r/;
-  const htmlRegEx = /(<([^>]+)>)/gi;
-  const removeSpace = /\u00a0/g;
-  const removeWhiteSpace = /\s+/g;
-  return inputQuery
-    .replace(newLineRegEx, " ")
-    .replace(htmlRegEx, " ")
-    .replace(removeSpace, " ")
-    .replace(removeWhiteSpace, " ")
-    .trim();
-};
+// const cleanOutput = (inputQuery) => {
+//   const newLineRegEx = /\r?\n|\r/;
+//   const htmlRegEx = /(<([^>]+)>)/gi;
+//   const removeSpace = /\u00a0/g;
+//   const removeWhiteSpace = /\s+/g;
+//   return inputQuery
+//     .replace(newLineRegEx, " ")
+//     .replace(htmlRegEx, " ")
+//     .replace(removeSpace, " ")
+//     .replace(removeWhiteSpace, " ")
+//     .trim();
+// };
 
 app.get("/check", async function (req, res) {
   try {
     const grammarly = new Grammarly();
-    const query = req.query.search;
-    if (query.length > 0) {
-      const parsedQuery = cleanOutput(query);
-      const results = await grammarly.analyse(parsedQuery).then(correct);
+    // const grammarly = new Grammarly({
+    //   auth: {
+    //     grauth:
+    //       "AABJGSpHn0Z6HKWDU9BbHFaZcOmSeqfQuyv-WO26b42m8bPHydqCh_iGOkQ_ZqJ5CxWfOuTfPtMqSBjf",
+    //     "csrf-token": "AABJGfVQ2px4puEa8z+4wNGWORbZpEJi6LX0PQ",
+    //   },
+    // });
+    const { search } = req.query;
+    if (search.length > 0) {
+      const results = await grammarly.analyse(search).then(correct);
       const finalResults = getRequiredDetailsFromGrammarly(results);
       res.status(200).send(finalResults);
     } else {
