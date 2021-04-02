@@ -53,7 +53,7 @@ const cleanOutput = (inputQuery) => {
   return inputQuery ? removeExtra(inputQuery) : inputQuery;
 };
 
-app.get("/check", async function (req, res) {
+app.get("/api/v1/check", async function (req, res) {
   try {
     const grammarly = new Grammarly();
     // const grammarly = new Grammarly({
@@ -63,11 +63,10 @@ app.get("/check", async function (req, res) {
     //     "csrf-token": "AABJH1NwM0PyotrfdTxHxwUZRiZZzXrEbl/aBg",
     //   },
     // });
-    const { search } = req.query;
-    if (search.length > 0) {
-      const results = await grammarly.analyse(search).then(correct);
+    const { text } = req.query;
+    if (text.length > 0) {
+      const results = await grammarly.analyse(text).then(correct);
       const finalResults = getRequiredDetailsFromGrammarly(results);
-      console.log(results);
       res.status(200).send(finalResults);
     } else {
       res.status(200).send([]);
