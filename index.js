@@ -19,38 +19,39 @@ const getRequiredDetailsFromGrammarly = (response) => {
       cardLayout: { group },
     } = alert;
     return {
-      title: title,
-      minicardTitle: minicardTitle,
-      result: result,
-      details: details,
-      explanation: explanation,
-      todo: todo,
-      text: text,
-      group: group,
+      title: cleanOutput(title),
+      minicardTitle: cleanOutput(minicardTitle),
+      result: cleanOutput(result),
+      details: cleanOutput(details),
+      explanation: cleanOutput(explanation),
+      todo: cleanOutput(todo),
+      text: cleanOutput(text),
+      group: cleanOutput(group),
     };
   });
-
-  const { score } = response.result;
+  const { score, outcomeScores, generalScore } = response.result;
   const { corrected } = response;
   return {
     alerts,
-    score,
+    score: { score, outcomeScores, generalScore },
     corrected,
   };
 };
 
-// const cleanOutput = (inputQuery) => {
-//   const newLineRegEx = /\r?\n|\r/;
-//   const htmlRegEx = /(<([^>]+)>)/gi;
-//   const removeSpace = /\u00a0/g;
-//   const removeWhiteSpace = /\s+/g;
-//   return inputQuery
-//     .replace(newLineRegEx, " ")
-//     .replace(htmlRegEx, " ")
-//     .replace(removeSpace, " ")
-//     .replace(removeWhiteSpace, " ")
-//     .trim();
-// };
+const cleanOutput = (inputQuery) => {
+  const newLineRegEx = /\r?\n|\r/;
+  const htmlRegEx = /(<([^>]+)>)/gi;
+  const removeSpace = /\u00a0/g;
+  const removeWhiteSpace = /\s+/g;
+  const removeExtra = (query) =>
+    query
+      .replace(newLineRegEx, " ")
+      .replace(htmlRegEx, " ")
+      .replace(removeSpace, " ")
+      .replace(removeWhiteSpace, " ")
+      .trim();
+  return inputQuery ? removeExtra(inputQuery) : inputQuery;
+};
 
 app.get("/check", async function (req, res) {
   try {
@@ -58,14 +59,15 @@ app.get("/check", async function (req, res) {
     // const grammarly = new Grammarly({
     //   auth: {
     //     grauth:
-    //       "AABJGSpHn0Z6HKWDU9BbHFaZcOmSeqfQuyv-WO26b42m8bPHydqCh_iGOkQ_ZqJ5CxWfOuTfPtMqSBjf",
-    //     "csrf-token": "AABJGfVQ2px4puEa8z+4wNGWORbZpEJi6LX0PQ",
+    //       "AABJH9lc281M9dT-n67og-TL61sgtqFMAUHLDRowzlgmjw0k8hg4Z12Z-D1Telx26ZoNwkog1V0YwB2j",
+    //     "csrf-token": "AABJH1NwM0PyotrfdTxHxwUZRiZZzXrEbl/aBg",
     //   },
     // });
     const { search } = req.query;
     if (search.length > 0) {
       const results = await grammarly.analyse(search).then(correct);
       const finalResults = getRequiredDetailsFromGrammarly(results);
+      console.log(results);
       res.status(200).send(finalResults);
     } else {
       res.status(200).send([]);
