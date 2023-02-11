@@ -26,6 +26,6 @@
     "url": "git://github.com/Jaynil1611/Grammarly-API"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.20"
   }
 }
